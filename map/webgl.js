@@ -760,7 +760,8 @@ window.TILE_VERSION = {
       apiHost: bmapcfg.home,
       apiIMG: f4 + "//api.map.baidu.com/images",
       staticHost: f4 + "//webmap0.bdimg.com",
-      imgPath: f4 + "//webmap0.bdimg.com/image/api/",
+      // imgPath: f4 + "//webmap0.bdimg.com/image/api/",
+      imgPath: bmapcfg.home + "/image/api/",
       tileDomain: [f4 + "//maponline0.bdimg.com", f4 + "//maponline1.bdimg.com", f4 + "//maponline2.bdimg.com", f4 + "//maponline3.bdimg.com"],
       optDomain: "http://10.120.25.45:8017",
       rasterTilePath: "/tile/",
@@ -771,7 +772,8 @@ window.TILE_VERSION = {
         if (typeof e === "string" && this.mapStyleNameIdPair[e] > 0) {
           i = "map_icons2x_" + (this.mapStyleNameIdPair[e] - 1) + "/"
         }
-        return f4 + "//maponline0.bdimg.com/sty/" + i
+        return  bmapcfg.home + "/sty/" + i
+        // return f4 + "//maponline0.bdimg.com/sty/" + i
       },
       getMapStyleFiles: function(T) {
         var hU = true;
@@ -781,7 +783,8 @@ window.TILE_VERSION = {
         var hV = hU ? "": "_" + (this.mapStyleNameIdPair[T] - 1);
         var i = fA();
         var hT = "udt=" + i.udt + "&v=" + i.ver;
-        var e = f4 + "//maponline0.bdimg.com/sty/";
+        // var e = f4 + "//maponline0.bdimg.com/sty/";
+        var e = bmapcfg.home + "/sty/";
         return [e + "icons_2x" + hV + ".js?" + hT, e + "fs" + hV + ".js?" + hT, e + "indoor_fs.js?" + hT]
       },
       tvc: {
@@ -966,12 +969,13 @@ window.TILE_VERSION = {
     bp.frequencyCbk = function(e) {
       if (e) {
         window.QTFrequency = e
-      }
+      } 
     };
     bp.verify = function() { };
     bp.frequency = function() {};
     bp.getSeckey = function() {
-      var e = f4 + "//dlswbr.baidu.com/heicha/mw/abclite-2063-s.js";
+      // var e = f4 + "//dlswbr.baidu.com/heicha/mw/abclite-2063-s.js";
+      var e = bmapcfg.home + "/map/abclite-2063-s.js";
       ho.load(e)
     };
     bp.apiLoad = bp.apiLoad ||
@@ -24896,7 +24900,8 @@ window.TILE_VERSION = {
         e._asyncSearch()
       })
     }
-    var bo = e4.staticHost + "/wolfman/static/common/images/";
+    // var bo = e4.staticHost + "/wolfman/static/common/images/";
+    var bo = bmapcfg.home + "/wolfman/static/common/images/";
     d4._iconOpen = e4.apiIMG + "/iw_plus.gif";
     d4._iconClose = e4.apiIMG + "/iw_minus.gif";
     d4._stopUrl = bo + "new/bus-stop-1x_ddd4723.png";
